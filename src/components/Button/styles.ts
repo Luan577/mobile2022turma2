@@ -3,17 +3,17 @@ import colors from "../../styles/colors";
 
 const styles = StyleSheet.create({
   buttonPrimary: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.red,
     borderRadius: 5,
     margin: 10
   },
   buttonSecondary: {
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.red,
     borderRadius: 5,
     margin: 10
   },
   buttonThird: {
-    backgroundColor: colors.third,
+    backgroundColor: colors.red,
     borderRadius: 5,
     margin: 10
   },

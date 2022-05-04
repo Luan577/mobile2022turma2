@@ -19,3 +19,4 @@ export default function Button({ onPress, type, title, ...rest }: ButtonProps) {
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
+}

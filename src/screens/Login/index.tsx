@@ -41,12 +41,15 @@ export default function Login({ navigation }: LoginTypes) {
               autoCapitalize="none"
             />
           </View>
+          <View
+          style={styles.buttonRow}>
           <Button title="Login" type="primary" onPress={handleSignIn} />
           <Button
             title="Cadastre-se"
             type="secondary"
             onPress={handleCadastrar}
           />
+          </View>
         </KeyboardAvoidingView>
     </View>
   );

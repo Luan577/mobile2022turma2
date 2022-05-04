@@ -13,7 +13,6 @@ import Card from "../../components/Card";
 export default function Chat() {
   const renderItem = ({ item }: any) => <Card data={item} />;
   return (
-    <ImageBackground source={require("../../assets/fundo.png")}>
       <SafeAreaView>
         <View>
           <FontAwesome5 name="search" size={24} color="black" />
@@ -25,6 +24,5 @@ export default function Chat() {
           keyExtractor={(item) => String(item.id)}
         />
       </SafeAreaView>
-    </ImageBackground>
   );
 }

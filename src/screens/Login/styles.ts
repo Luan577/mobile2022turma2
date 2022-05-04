@@ -3,6 +3,7 @@ import colors from "../../styles/colors";
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: colors.red,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     textAlign: "center",
-    color: colors.primary,
+    color: colors.white,
     marginBottom: 20,
   },
   formRow: {
@@ -19,12 +20,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: colors.primary,
+    borderColor: colors.black,
+    backgroundColor:colors.white,
     borderRadius: 5,
   },
   label: {
     fontSize: 18,
-    color: colors.black,
+    color: colors.red,
     padding: 5
   },
   input: {
@@ -34,8 +36,13 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 24,
-    color: colors.primary,
+    color: colors.black,
     padding: 10
+  },
+  buttonRow: {
+    flexDirection:"row",
+    justifyContent: "space-between",
+
   }
 })
 
