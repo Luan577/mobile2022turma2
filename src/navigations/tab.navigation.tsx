@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen } from "../screens";
-import { Ionicons } from "@expo/vector-icons";
+import { ChatScreen, MapScreen , PerfilScreen } from "../screens";
+import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
 import colors from "../styles/colors";
 
 const Tab = createBottomTabNavigator();
@@ -32,6 +32,15 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <Ionicons name="chatbubbles" size={24} color={colors.white} />
+          ),
+        }}
+      />
+       <Tab.Screen
+        name="Mapa"
+        component={MapScreen}
+        options={{
+          tabBarIcon: () => (
+           < FontAwesome5 name="map-marker-alt" size={24} color={colors.white} />
           ),
         }}
       />

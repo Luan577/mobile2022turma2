@@ -43,6 +43,11 @@ const styles = StyleSheet.create({
     flexDirection:"row",
     justifyContent: "space-between",
 
+  },
+  button: {
+    justifyContent: "center",
+    width: "100%",
+    textAlign: "center",
   }
 })
 
