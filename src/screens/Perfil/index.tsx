@@ -1,43 +1,43 @@
 import React from "react";
-import { View, Text, ImageBackground, Image, TextInput } from "react-native";
-import CardSocial from "../../components/CardSocial";
+import { Text, ImageBackground, Image } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { ButtonComp, CardSocialComp } from "../../components";
 import styles from "./styles";
-import Button from "../../components/Button";
-
+import { useAuth } from "../../hook/auth";
 export default function Perfil() {
+  const { user } = useAuth();
   return (
-    <View style={styles.container}>
-        <Text>Luan Dantass</Text>
-        <CardSocial>
-          <>
-            <FontAwesome5 name="facebook" />
-            <TextInput placeholder="https://facebook.com" />
-          </>
-        </CardSocial>
-        <CardSocial>
-          <>
-            <FontAwesome5 name="instagram" />
-            <TextInput placeholder="https://instagram.com" />
-          </>
-        </CardSocial>
-        <CardSocial>
-          <>
-            <FontAwesome5 name="linkedin" />
-            <TextInput placeholder="https://linkedin.com" />
-          </>
-        </CardSocial>
-        <Button
-          title="Salvar"
-          type="third"
-          onPress={() => console.log("Salvar")}
-        />
-        <Button
-          title="Alterar Senha"
-          type="third"
-          onPress={() => console.log("Alterar Senha")}
-        />
-        <Button title="Sair" type="third" onPress={() => console.log("Sair")} />
-    </View>
+    <>
+      <Image source={{ uri: user?.profile_photo_url }} style={styles.img} />
+      <Text style={styles.title}>{user?.name}</Text>
+      <CardSocialComp>
+        <>
+          <FontAwesome5 name="facebook" style={styles.icon} />
+          <Text style={styles.link}>https://facebook.com</Text>
+        </>
+      </CardSocialComp>
+      <CardSocialComp>
+        <>
+          <FontAwesome5 name="instagram" style={styles.icon} />
+          <Text style={styles.link}>https://instagram.com</Text>
+        </>
+      </CardSocialComp>
+      <CardSocialComp>
+        <>
+          <FontAwesome5 name="linkedin" style={styles.icon} />
+          <Text style={styles.link}>https://linkedin.com</Text>
+        </>
+      </CardSocialComp>
+      <ButtonComp
+        title="Alterar Senha"
+        type="primary"
+        onPress={() => console.log("Alterar Senha")}
+      />
+      <ButtonComp
+        title="Sair"
+        type="primary"
+        onPress={() => console.log("Sair")}
+      />
+      </>
   );
 }

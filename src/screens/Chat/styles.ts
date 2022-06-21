@@ -19,7 +19,10 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 24,
     padding: 5
-  }
+  },
+  title:{},
+  input:{}
+  
 })
 
 export default styles;
