@@ -1,14 +1,30 @@
 import React from "react";
-import { Text, ImageBackground, Image } from "react-native";
+import { Text, Alert } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ButtonComp, CardSocialComp } from "../../components";
 import styles from "./styles";
 import { useAuth } from "../../hook/auth";
+import { AxiosError } from "axios";
+import { IUser } from "../../interfaces/User.interface";
 export default function Perfil() {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
+  async function logout() {
+    try {
+        await signOut();
+    } catch (error) {
+        const err = error as AxiosError;
+        const data = err.response?.data as IUser;
+        let message = "";
+        if (data.data) {
+            for (const [key, value] of Object.entries(data.data)) {
+                message = `${message} ${value}`;
+            }
+        }
+        Alert.alert(`${data.message} ${message}`);
+    }
+}
   return (
     <>
-      <Image source={{ uri: user?.profile_photo_url }} style={styles.img} />
       <Text style={styles.title}>{user?.name}</Text>
       <CardSocialComp>
         <>
@@ -36,7 +52,7 @@ export default function Perfil() {
       <ButtonComp
         title="Sair"
         type="primary"
-        onPress={() => console.log("Sair")}
+        onPress={() => logout()}
       />
       </>
   );

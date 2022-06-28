@@ -44,15 +44,6 @@ export default function TabNavigation() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Sair"
-        component={SairScreen}
-        options={{
-          tabBarIcon: () => (
-           < FontAwesome5 name="map-marker-alt" size={24} color={colors.white} />
-          ),
-        }}
-      />
     </Tab.Navigator>
   );
 }

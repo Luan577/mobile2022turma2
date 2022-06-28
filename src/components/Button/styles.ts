@@ -4,8 +4,8 @@ import colors from "../../styles/colors";
 const styles = StyleSheet.create({
   buttonPrimary: {
     backgroundColor: colors.red,
-    // borderRadius: 5,
-    paddingTop: 20
+    borderRadius: 5,
+    margin: 10
   },
   buttonSecondary: {
     backgroundColor: colors.red,
@@ -15,12 +15,13 @@ const styles = StyleSheet.create({
   buttonThird: {
     backgroundColor: colors.red,
     borderRadius: 5,
-    margin: 10
+    margin: 10,
+    width: "90%"
   },
   text: {
     color: colors.white,
     fontWeight: "bold",
-    // textAlign: "center",
+    textAlign: "center",
     padding: 10,
     fontSize: 18
   }
