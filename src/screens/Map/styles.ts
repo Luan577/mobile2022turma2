@@ -18,11 +18,12 @@ const styles = StyleSheet.create  ({
    height: Dimensions.get("window").height,
   },
   posicao: {
+    justifyContent: 'center',
     position: "absolute",
-    top:0,
-    left: 0,
+    top:10,
+    left: 35,
     zIndex: 1,
-    width: "100%"
+    width: "85%"
   },
   google: {
     width: Dimensions.get("window").width,
@@ -31,11 +32,11 @@ const styles = StyleSheet.create  ({
     flexDirection:'row',
     justifyContent: 'space-between',
     backgroundColor: colors.red,
-    borderRadius: 10,
-    margin: 10,
+    borderRadius: 5,
+    margin: 5,
     alignItems: "center",
-    width: "99",
-    height:65,
+    width: "50",
+    height:10,
   },
   input:{
     width: "76%"
