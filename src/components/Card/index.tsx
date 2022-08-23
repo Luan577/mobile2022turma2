@@ -1,19 +1,20 @@
-
-  
 import React from "react";
-import { Text, View } from "react-native";
-import { CardProps } from "../../interfaces/Card.interface";
+import { Text, View, Image } from "react-native";
+import { IMensagemState, IMensagem } from "../../interfaces/Mensagem.interface";
 import styles from "./styles";
+import { format } from "date-fns";
 
-export default function Card({ data }: CardProps) {
+export default function Card({ data }: IMensagemState) {
   return (
-    <View style={styles.card}>
+    <View style={styles.cardOrange}>
       <Text>
-        {data.nome} - {data.data}
+        {data.user.name} - {""}
+        {format(new Date(data.created_at), "dd/MM/yyyy HH:mm:ss")}
       </Text>
-      <View>
+      <View style={styles.msg}>
         <Text>Título: {data.titulo}</Text>
         <Text>Mensagem: {data.mensagem}</Text>
+        <Image source={{ uri: data.imagem }} style={styles.img} />
         <View style={styles.topicos}>
           {data.topico.map((i) => (
             <View key={i.id} style={styles.topic}>

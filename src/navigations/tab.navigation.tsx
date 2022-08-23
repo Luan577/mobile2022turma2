@@ -1,10 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, MapScreen , PerfilScreen, QrCodeScreen, CameraScreen ,SairScreen } from "../screens";
+import { ChatScreen, MapScreen , PerfilScreen, QrCodeScreen, CameraScreen , ArquivoScreen , SairScreen } from "../screens";
 import { Ionicons, FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../styles/colors";
+import ChatNavigation from "./chat.navigation";
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottoimport ChatNavigation from "./chat.navigation";mTabNavigator();
 
 export default function TabNavigation() {
   return (
@@ -40,13 +41,7 @@ export default function TabNavigation() {
         component={MapScreen}
         options={{
           tabBarIcon: () => (
-           < FontAwesome5 name="map-marker-alt" size={24} color={colors.white} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="QrCode"
-        component={QrCodeScreen}
+           < FontAwesomimport ChatNavigation from "./chat.navigation";deScreen}
         options={{
           tabBarIcon: () => (
             <MaterialCommunityIcons name="qrcode-scan" size={24} color={colors.white} />
@@ -59,6 +54,24 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <MaterialCommunityIcons name="camera" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Arquivo"
+        component={ArquivoScreen}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="file-account" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ChatNavigation"
+        component={ChatNavigation}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="chatbubbles" size={24} color={colors.white} />
           ),
         }}
       />
