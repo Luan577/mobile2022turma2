@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   FlatList,
-  ImageBackground,
   SafeAreaView,
   TextInput,
   View,
@@ -37,8 +36,7 @@ export default function Chat({ navigation }: ChatTypes) {
       {isLoading ? (
         <LoadingComp />
       ) : (
-          <ImageBackground
-            source={require("../../assets/fundo.png")}
+          <View
             style={styles.container}
           >
             <SafeAreaView style={styles.container}>
@@ -57,7 +55,7 @@ export default function Chat({ navigation }: ChatTypes) {
                 <Text style={styles.buttonText}>+</Text>
               </TouchableOpacity>
             </SafeAreaView>
-          </ImageBackground>
+        </View>
         )}
     </>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ChatScreen, MapScreen , PerfilScreen, QrCodeScreen, CameraScreen , ArquivoScreen , SairScreen } from "../screens";
-import { Ionicons, FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome5, MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 import colors from "../styles/colors";
 import ChatNavigation from "./chat.navigation";
 
-const Tab = createBottoimport ChatNavigation from "./chat.navigation";mTabNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
@@ -27,21 +27,18 @@ export default function TabNavigation() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Mensagem"
-        component={ChatScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="chatbubbles" size={24} color={colors.white} />
-          ),
-        }}
-      />
        <Tab.Screen
         name="Mapa"
         component={MapScreen}
         options={{
           tabBarIcon: () => (
-           < FontAwesomimport ChatNavigation from "./chat.navigation";deScreen}
+            <MaterialCommunityIcons name="map" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="QrCode"
+        component={QrCodeScreen}
         options={{
           tabBarIcon: () => (
             <MaterialCommunityIcons name="qrcode-scan" size={24} color={colors.white} />
@@ -71,7 +68,7 @@ export default function TabNavigation() {
         component={ChatNavigation}
         options={{
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="chatbubbles" size={24} color={colors.white} />
+            <MaterialCommunityIcons name="chat" size={24} color={colors.white} />
           ),
         }}
       />
