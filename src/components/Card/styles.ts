@@ -18,6 +18,13 @@ const styles = StyleSheet.create({
     margin: 5,
     borderRadius: 5,
     padding: 5
+  },
+  cardOrange:{
+    backgroundColor:colors.red,
+    margin:5,
+    borderRadius: 5,
+    minHeight: 100
+
   }
 })
 

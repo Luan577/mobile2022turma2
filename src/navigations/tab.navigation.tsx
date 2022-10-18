@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, MapScreen , PerfilScreen, QrCodeScreen, CameraScreen , ArquivoScreen , SairScreen } from "../screens";
+import { ChatScreen, MapScreen , PerfilScreen, QrCodeScreen, CameraScreen , ArquivoScreen , SairScreen, VideoAudioScreen , AcelerometroScreen} from "../screens";
 import { Ionicons, FontAwesome5, MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 import colors from "../styles/colors";
 import ChatNavigation from "./chat.navigation";
@@ -41,7 +41,7 @@ export default function TabNavigation() {
         component={QrCodeScreen}
         options={{
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="qrcode-scan" size={24} color={colors.white} />
+          <MaterialCommunityIcons name="qrcode-scan" size={24} color={colors.white} />
           ),
         }}
       />
@@ -69,6 +69,24 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <MaterialCommunityIcons name="chat" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="AudioVideo"
+        component={VideoAudioScreen}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="video" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Acelerometro"
+        component={AcelerometroScreen}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="car" size={24} color={colors.white} />
           ),
         }}
       />

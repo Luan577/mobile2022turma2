@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 10,
     alignItems: 'center',
-    width: "80%",
+    width: "100%",
     height: 45,
   },
   input: {

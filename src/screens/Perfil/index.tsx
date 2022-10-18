@@ -1,30 +1,35 @@
-import React from "react";
-import { Text, Alert } from "react-native";
+import React, {useEffect} from "react";
+import { Text, Image, View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { ButtonComp, CardSocialComp } from "../../components";
 import styles from "./styles";
 import { useAuth } from "../../hook/auth";
-import { AxiosError } from "axios";
-import { IUser } from "../../interfaces/User.interface";
+import * as Notifications from 'expo-notifications';
+import { registerForPushNotificationsAsync } from "../../services/data/Push";
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: true,
+    shouldSetBadge: true,
+
+  }),
+});
+
 export default function Perfil() {
-  const { user, signOut } = useAuth();
-  async function logout() {
-    try {
-        await signOut();
-    } catch (error) {
-        const err = error as AxiosError;
-        const data = err.response?.data as IUser;
-        let message = "";
-        if (data.data) {
-            for (const [key, value] of Object.entries(data.data)) {
-                message = `${message} ${value}`;
-            }
-        }
-        Alert.alert(`${data.message} ${message}`);
+  const { user } = useAuth();
+  console.log(user?.profile_photo_url)
+
+  useEffect(() => {
+    async function fetchToken() {
+      const token = await registerForPushNotificationsAsync()
+      console.log(token)
     }
-}
+    fetchToken()
+  }, []);
   return (
-    <>
+    <View style={styles.container}>
+      <Image source={{ uri: user?.profile_photo_url }} style={styles.img} />
       <Text style={styles.title}>{user?.name}</Text>
       <CardSocialComp>
         <>
@@ -52,8 +57,8 @@ export default function Perfil() {
       <ButtonComp
         title="Sair"
         type="primary"
-        onPress={() => logout()}
+        onPress={() => console.log("Sair")}
       />
-      </>
+    </View>
   );
 }
