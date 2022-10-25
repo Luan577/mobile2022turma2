@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, MapScreen , PerfilScreen, QrCodeScreen, CameraScreen , ArquivoScreen , SairScreen, VideoAudioScreen , AcelerometroScreen} from "../screens";
-import { Ionicons, FontAwesome5, MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
+import { ChatScreen, MapScreen, PerfilScreen, QrCodeScreen, CameraScreen, ArquivoScreen, SairScreen, VideoAudioScreen, AcelerometroScreen, PedometroScreen } from "../screens";
+import { Ionicons, FontAwesome5, MaterialCommunityIcons, FontAwesome, Foundation } from "@expo/vector-icons";
 import colors from "../styles/colors";
 import ChatNavigation from "./chat.navigation";
 
@@ -27,7 +27,7 @@ export default function TabNavigation() {
           ),
         }}
       />
-       <Tab.Screen
+      <Tab.Screen
         name="Mapa"
         component={MapScreen}
         options={{
@@ -41,7 +41,7 @@ export default function TabNavigation() {
         component={QrCodeScreen}
         options={{
           tabBarIcon: () => (
-          <MaterialCommunityIcons name="qrcode-scan" size={24} color={colors.white} />
+            <MaterialCommunityIcons name="qrcode-scan" size={24} color={colors.white} />
           ),
         }}
       />
@@ -82,11 +82,20 @@ export default function TabNavigation() {
         }}
       />
       <Tab.Screen
-        name="Acelerometro"
-        component={AcelerometroScreen}
+      name="Acelerometro"
+      component={AcelerometroScreen}
         options={{
           tabBarIcon: () => (
             <MaterialCommunityIcons name="car" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Pedometro"
+        component={PedometroScreen}
+        options={{
+          tabBarIcon: () => (
+            <Foundation name="foot" size={24} color={colors.white} />
           ),
         }}
       />
